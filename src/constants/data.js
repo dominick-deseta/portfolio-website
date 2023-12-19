@@ -2,7 +2,7 @@ export const properties = [
     {
         id: 1,
         thumbnail: "headshot",
-        name: "AHAnonymous",
+        title: "AHAnonymous",
         type: "Android Application",
         tools:"Android Studio, Firebase",
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
@@ -12,7 +12,7 @@ export const properties = [
     {
         id: 2,
         thumbnail: "samples/breakfast",
-        name: "HackIllinois App",
+        title: "HackIllinois App",
         type: "Android Application",
         tools:"Android Studio, Firebase",
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
@@ -22,7 +22,7 @@ export const properties = [
     {
         id: 3,
         thumbnail: "samples/shoe",
-        name: "Calendar Widget",
+        title: "Calendar Widget",
         type: "Android Widget",
         tools:"Android Studio, Google Calendar API",
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
@@ -32,7 +32,7 @@ export const properties = [
     {
         id: 4,
         thumbnail: "samples/balloons",
-        name: "Crime Data Visualizer",
+        title: "Crime Data Visualizer",
         type: "React Website",
         tools:"React, Node.js, MySQL, GCP",
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
@@ -42,7 +42,7 @@ export const properties = [
     {
         id: 5,
         thumbnail: "samples/cup-on-a-table",
-        name: "Fractal Renderer",
+        title: "Fractal Renderer",
         type: "Java Swing Application",
         tools:"Java Swing",
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
@@ -52,7 +52,7 @@ export const properties = [
     {
         id: 6,
         thumbnail: "samples/man-on-a-street",
-        name: "Form Processor",
+        title: "Form Processor",
         type: "React Website",
         tools:"React",
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
