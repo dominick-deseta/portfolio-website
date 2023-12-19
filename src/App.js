@@ -1,22 +1,24 @@
 import './App.css';
+import Card from "./components/Card"
+import { properties } from "./constants/data"
+import {AdvancedImage} from '@cloudinary/react';
+import {Cloudinary} from "@cloudinary/url-gen";
 import headshot from './resources/dom_headshot.jpg'
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
 
 function App() {
+  const cld = new Cloudinary({cloud: {cloudName: 'dv5ot0eg0'}});
+  const myImage = cld.image('headshot');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={headshot} className="App-logo" alt="logo" />
-        <p>
-          Look at me spin!
-        </p>
-
-      </header>
+      <AdvancedImage cldImg={myImage} />
+      <div className='properties'>
+        {properties.map((item)=> (
+          <Card data={item} />
+        ))}
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
