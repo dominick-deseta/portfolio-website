@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Saira', sans-serif;
+  font-weight: 400;
   padding: 25px;
 }
 
@@ -9,4 +10,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform .5s;
 }

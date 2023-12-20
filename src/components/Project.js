@@ -5,11 +5,7 @@ import { Cloudinary } from "@cloudinary/url-gen";
 
 const Project = ({data}) => {
     const { id, thumbnail, title, type, tools, screenshots, githubUrl, description } = data
-    const cld = new Cloudinary({
-        cloud: {
-          cloudName: 'dv5ot0eg0'
-        }
-      }); 
+    const cld = new Cloudinary({ cloud: { cloudName: 'dv5ot0eg0' }}); 
     return (
         <div className="project">
             <div className="project__content">

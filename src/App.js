@@ -1,17 +1,35 @@
+import './index.css';
 import './App.css';
 import Card from "./components/Card"
 import { properties } from "./constants/data"
-import {AdvancedImage} from '@cloudinary/react';
 import {Cloudinary} from "@cloudinary/url-gen";
-import headshot from './resources/dom_headshot.jpg'
+import SplitType from 'split-type';
+import { gsap } from "gsap";
+import { useEffect } from 'react';
 
 function App() {
-  const cld = new Cloudinary({cloud: {cloudName: 'dv5ot0eg0'}});
-  const myImage = cld.image('headshot');
+  
+  useEffect(() => {
+    // Initialize SplitType only when the component mounts
+    const myName = new SplitType('#my-name');
+    gsap.to(myName.chars, {
+      y: 0,
+      stagger: 0.05,
+      delay: 0.2,
+      duration: 0.1
+    });
+
+    // Cleanup function to run when the component unmounts
+    return () => {
+      myName.revert();
+    };
+  }, []);
 
   return (
     <div className="App">
-      <AdvancedImage cldImg={myImage} />
+      <header>
+        <h1 id="my-name">Dominick DeSeta</h1>
+      </header>
       <div className='properties'>
         {properties.map((item)=> (
           <Card data={item} />
