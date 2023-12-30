@@ -16,7 +16,7 @@ export const properties = [
         ],
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
         githubUrl:"",
-        description:""
+        description:"AH Anonymous test description AH Anonymous test description AH Anonymous test description AH Anonymous test description"
     },
     {
         id: 2,
@@ -35,7 +35,7 @@ export const properties = [
         ],
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
         githubUrl:"",
-        description:""
+        description:"HackIllinois test description HackIllinois test description HackIllinois test description HackIllinois test description HackIllinois test description "
     },
     {
         id: 3,
@@ -54,7 +54,7 @@ export const properties = [
         ],
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
         githubUrl:"",
-        description:""
+        description:"Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description "
     },
     {
         id: 4,
@@ -81,7 +81,7 @@ export const properties = [
         ],        
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
         githubUrl:"",
-        description:""
+        description:"Crime Data visualizer test description Crime Data visualizer test description Crime Data visualizer test description Crime Data visualizer test description Crime Data visualizer test description "
     },
     {
         id: 5,
@@ -96,7 +96,7 @@ export const properties = [
         ],
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
         githubUrl:"",
-        description:""
+        description:"Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description "
     },
     {
         id: 6,
@@ -111,6 +111,6 @@ export const properties = [
         ],
         screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
         githubUrl:"",
-        description:""
+        description:"Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description "
     }
   ];
