@@ -17,6 +17,7 @@ header {
 h1 {
   font-size: 7rem;
   font-family: 'Chakra Petch', sans-serif;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   line-height: 5.9rem;
+  overflow: hidden; 
+  margin: 0 15px; /* Adds spacing between names, adjust as needed */
 }

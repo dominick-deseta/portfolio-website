@@ -13,6 +13,13 @@
 }
 
 .char {
-  transform: translateY(115px);
-  transition: transform .5s;
+  display: inline-block; 
+  transform: translateY(100%); 
+}
+
+.name-container {
+  display: flex; /* Enables Flexbox */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  justify-content: center; /* Center the names horizontally */
+  align-items: center; /* Align the names vertically */
 }
