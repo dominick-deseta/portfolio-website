@@ -4,14 +4,16 @@ import "./Modal.css"
 import {IoCloseCircl, IoCloseCircleOutline} from "react-icons/io5"
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from '@cloudinary/react'
+import {motion} from "framer-motion"
 
 // 38:09
 
 const Modal = ({data, close}) => {
     const { id, thumbnail, title, type, tools, screenshots, githubUrl, description } = data;
+    const modalVariants = { open: {opacity:1, transition: {staggerChildren: 0.5, delayChildren: 0.2}}, closed: { opacity: 0} };
     const cld = new Cloudinary({ cloud: { cloudName: 'dv5ot0eg0' }}); 
     return (
-        <div className="modal" onClick={(e) => e.stopPropagation()}> 
+        <motion.div className="modal" onClick={(e) => e.stopPropagation()} variants={modalVariants}> 
             <AdvancedImage 
                 className="modal__image"
                 cldImg={cld.image(thumbnail)}
@@ -35,7 +37,7 @@ const Modal = ({data, close}) => {
                     <IoCloseCircleOutline className="modal__close-icon"/>
                 </button>
             </div>
-        </div>
+        </motion.div>
     )
 };
 

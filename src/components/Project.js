@@ -1,14 +1,15 @@
 import React from 'react'
 import "./Project.css"
 import { AdvancedImage } from '@cloudinary/react'
-import { Cloudinary } from "@cloudinary/url-gen";
-import Feature from './Feature';
+import { Cloudinary } from "@cloudinary/url-gen"
+import Feature from './Feature'
+import {motion} from "framer-motion"
 
 const Project = ({ data, open }) => {
     const { id, thumbnail, title, type, tools, screenshots, githubUrl, description } = data
     const cld = new Cloudinary({ cloud: { cloudName: 'dv5ot0eg0' }}); 
     return (
-        <div className="project" onClick={open}>
+        <motion.div className="project" onClick={open} whileHover={{scale:1.1}}>
             <div className="project__content">
                 <div className="project__image-container">
                     {/* <img className="project__image" src={cld.image(thumbnail)} alt="uhhh"/> */}
@@ -34,9 +35,8 @@ const Project = ({ data, open }) => {
                         ))}
                     </div>
                 </div>
-
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -70,9 +70,9 @@ function App() {
         </div>
       </header>
       <button id="expandableButton" class="button">
-          <Icon className="button-icon"/> 
-          <span class="button-text">Button Text</span>
-        </button>
+        <Icon className="button-icon"/> 
+        <span class="button-text">Button Text</span>
+      </button>
       <div className='properties'>
         {properties.map((item)=> (
           <Card data={item} />
