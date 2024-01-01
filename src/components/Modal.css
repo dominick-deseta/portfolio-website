@@ -1,3 +1,8 @@
+.swiperimage {
+    height: 100%;
+    object-fit: cover;
+}
+
 .modal {
     min-height: 600px;
     border-radius: 20px;
@@ -23,8 +28,9 @@
     color: #737373;
 }
 
-.modal__image {
+.swiper {
     object-fit:cover;
+    padding-bottom: 30px !important;
     border-radius: 20px;
 }
 
@@ -60,18 +66,64 @@
     height: 40px;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+    width:7vh !important;
+    height:7vh !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none
+}
+
+.swiper-button-prev {
+    background-image: url("https://res.cloudinary.com/dv5ot0eg0/image/upload/v1704143569/left_arrow.png");
+}
+
+.swiper-button-next {
+    background-image: url("https://res.cloudinary.com/dv5ot0eg0/image/upload/v1704143569/right_arrow.png");
+}
+
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    background: gray !important;
+    opacity: 0.7 !important;
+}
+
+.swiper-pagination-bullet-active {
+    width: 16px !important;
+    height: 16px !important;
+    background: black !important; 
+    opacity: 1 !important;
+    transform: translateY(2px);
+}
+
+.swiper-pagination {
+    transform: translateY(10px) !important;
+}
+
+.swiper-scrollbar {
+    height: 10px !important;
+}
+
 @media only screen {
     .modal {
         width: 90%;
-        height: auto;
+        height: 100%;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         padding: 15px;
     }
 
-    .modal__image {
+    .swiper {
         width: 100%;
+        height: 100%;
     }
 
     .modal__info {
@@ -105,7 +157,7 @@
         padding: 30px;
     }
 
-    .modal__image {
+    .swiper {
         width: calc(70% - 10px);
         height: 100%;
     }

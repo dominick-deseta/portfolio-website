@@ -2,18 +2,23 @@ import React from "react";
 import Feature from "./Feature"
 import "./Modal.css"
 import {IoCloseCircl, IoCloseCircleOutline} from "react-icons/io5"
-import { Cloudinary } from "@cloudinary/url-gen";
-import { AdvancedImage } from '@cloudinary/react'
+// import { Cloudinary } from "@cloudinary/url-gen";
+// import { AdvancedImage } from '@cloudinary/react'
 import {motion} from "framer-motion"
 
-// 38:09
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Keyboard, Scrollbar } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 const Modal = ({data, close}) => {
     const { id, thumbnail, title, type, tools, screenshots, githubUrl, description } = data;
     const modalVariants = {
-         open: {
+        open: {
             opacity:1, 
-            transition: {staggerChildren: 0.5, delayChildren: 0.2}
+            transition: {delayChildren: 0.2}
         }, 
         closed: { opacity: 0} 
     };
@@ -29,18 +34,30 @@ const Modal = ({data, close}) => {
         open: { opacity: 1, x: 0 },
         closed: { opacity: 0, x: "10%"}
     }
-    const cld = new Cloudinary({ cloud: { cloudName: 'dv5ot0eg0' }}); 
+    // const cld = new Cloudinary({ cloud: { cloudName: 'dv5ot0eg0' }}); 
     return (
         <motion.div 
             className="modal" 
             onClick={(e) => e.stopPropagation()} 
             variants={modalVariants}
         > 
-            <motion.img 
-                className="modal__image"
-                src={`https://res.cloudinary.com/dv5ot0eg0/image/upload/${thumbnail}`}
-                variants={imageVariants}
-            />
+            <Swiper
+                className="swiper"
+                modules={[Navigation, Keyboard, Scrollbar]}
+                navigation
+                scrollbar={{draggable: true}}
+                effect
+                speed={800}
+                slidesPerView={1}
+                loop
+                keyboard={{enabled: true}}
+            >{
+                screenshots.map((image) => (
+                    <SwiperSlide className="swiperslide">
+                        <motion.img variants={imageVariants} className="swiperimage" src={`https://res.cloudinary.com/dv5ot0eg0/image/upload/${image}`} alt={`Slide 1`} />
+                    </SwiperSlide>
+                ))
+            }</Swiper> 
             <motion.div className="modal__info" variants={modalInfoVariants}>
                 <motion.div className="modal__row" variants={modalRowVariants}>
                     <span className="modal__title">{title}</span>

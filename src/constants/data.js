@@ -14,7 +14,7 @@ export const properties = [
                 name: "Firebase"
             }
         ],
-        screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
+        screenshots: ["test/phone1", "test/phone2", "test/phone3", "test/phone4"],
         githubUrl:"",
         description:"AH Anonymous test description AH Anonymous test description AH Anonymous test description AH Anonymous test description"
     },
@@ -33,7 +33,7 @@ export const properties = [
                 name: "Node.js"
             }
         ],
-        screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
+        screenshots: ["test/1", "test/2", "test/3", "test/4"],
         githubUrl:"",
         description:"HackIllinois test description HackIllinois test description HackIllinois test description HackIllinois test description HackIllinois test description "
     },
@@ -52,7 +52,7 @@ export const properties = [
                 name: "Google Calendar API"
             }
         ],
-        screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
+        screenshots: ["test/1", "test/2", "test/3", "test/4"],
         githubUrl:"",
         description:"Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description "
     },
@@ -79,7 +79,7 @@ export const properties = [
                 name: "GCP"
             }
         ],        
-        screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
+        screenshots: ["test/1", "test/2", "test/3", "test/4"],
         githubUrl:"",
         description:"Crime Data visualizer test description Crime Data visualizer test description Crime Data visualizer test description Crime Data visualizer test description Crime Data visualizer test description "
     },
@@ -94,7 +94,7 @@ export const properties = [
                 name: "Java Swing"
             }
         ],
-        screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
+        screenshots: ["test/1", "test/2", "test/3", "test/4"],
         githubUrl:"",
         description:"Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description "
     },
@@ -109,7 +109,7 @@ export const properties = [
                 name: "React"
             }
         ],
-        screenshots: ["samples/bike", "samples/sheep", "samples/elephants"],
+        screenshots: ["test/1", "test/2", "test/3", "test/4"],
         githubUrl:"",
         description:"Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description "
     }
