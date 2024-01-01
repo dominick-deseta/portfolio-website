@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import Project from "./Project"
 import Overlay from "./Overlay";
 import Modal from "./Modal";
+import { AnimatePresence } from "framer-motion";
 
 const Card = ({ data }) => {
     const [open, setOpen] = useState(false);
@@ -14,11 +15,13 @@ const Card = ({ data }) => {
     return (
         <>
             <Project data={data} open={openModal}/>
-            {open && (
-            <Overlay close={closeModal}> {
-                <Modal data={data} close={closeModal}/>
-            }</Overlay>
-            )}
+            <AnimatePresence>
+                {open && (
+                <Overlay close={closeModal}> {
+                    <Modal data={data} close={closeModal}/>
+                }</Overlay>
+                )}
+            </AnimatePresence>
         </>
     )
 }

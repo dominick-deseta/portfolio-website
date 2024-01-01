@@ -10,33 +10,56 @@ import {motion} from "framer-motion"
 
 const Modal = ({data, close}) => {
     const { id, thumbnail, title, type, tools, screenshots, githubUrl, description } = data;
-    const modalVariants = { open: {opacity:1, transition: {staggerChildren: 0.5, delayChildren: 0.2}}, closed: { opacity: 0} };
+    const modalVariants = {
+         open: {
+            opacity:1, 
+            transition: {staggerChildren: 0.5, delayChildren: 0.2}
+        }, 
+        closed: { opacity: 0} 
+    };
+    const imageVariants = {
+        open: { opacity: 1, y: "0vh" },
+        closed: {opacity: 0, y: "-10vh" }
+    }
+    const modalInfoVariants = {
+        open: { opacity: 1, transition: {staggerChildren: 0.2 }},
+        closed: { opacity: 0 }
+    }
+    const modalRowVariants = {
+        open: { opacity: 1, x: 0 },
+        closed: { opacity: 0, x: "10%"}
+    }
     const cld = new Cloudinary({ cloud: { cloudName: 'dv5ot0eg0' }}); 
     return (
-        <motion.div className="modal" onClick={(e) => e.stopPropagation()} variants={modalVariants}> 
-            <AdvancedImage 
+        <motion.div 
+            className="modal" 
+            onClick={(e) => e.stopPropagation()} 
+            variants={modalVariants}
+        > 
+            <motion.img 
                 className="modal__image"
-                cldImg={cld.image(thumbnail)}
+                src={`https://res.cloudinary.com/dv5ot0eg0/image/upload/${thumbnail}`}
+                variants={imageVariants}
             />
-            <div className="modal__info">
-                <div className="modal__row">
+            <motion.div className="modal__info" variants={modalInfoVariants}>
+                <motion.div className="modal__row" variants={modalRowVariants}>
                     <span className="modal__title">{title}</span>
-                </div>
-                <div className="modal__row">
+                </motion.div>
+                <motion.div className="modal__row" variants={modalRowVariants}>
                     <span className="modal__type">{type}</span>
-                </div>
-                <div className="modal__row">
+                </motion.div>
+                <motion.div className="modal__row" variants={modalRowVariants}>
                     {tools.map((tool)=> (
                         <Feature iconName={tool.icon} iconLabel={tool.name}/>
                     ))}
-                </div>
-                <div className="modal__description-wrapper">
+                </motion.div>
+                <motion.div className="modal__description-wrapper" variants={modalRowVariants}>
                     <p className="modal__description">{description}</p>
-                </div>
-                <button className="modal__close-wrapper" onClick={close} >
+                </motion.div>
+                <motion.button className="modal__close-wrapper" onClick={close} whileHover={{scale:1.2}}>
                     <IoCloseCircleOutline className="modal__close-icon"/>
-                </button>
-            </div>
+                </motion.button>
+            </motion.div>
         </motion.div>
     )
 };
