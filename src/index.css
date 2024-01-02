@@ -21,11 +21,12 @@ h1 {
   line-height: 5.9rem;
   overflow: hidden; 
   margin: 0 15px; /* Adds spacing between names, adjust as needed */
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) { /* Adjust the max-width as needed for your breakpoint */
   h1 {
-    font-size: 4rem; /* Smaller font size for mobile devices */
-    line-height: 3.4rem; /* Adjust line height accordingly */
+    font-size: 4.5rem; /* Smaller font size for mobile devices */
+    line-height: 3.7rem; /* Adjust line height accordingly */
   }
 }

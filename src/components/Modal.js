@@ -6,6 +6,8 @@ import {IoCloseCircl, IoCloseCircleOutline} from "react-icons/io5"
 // import { AdvancedImage } from '@cloudinary/react'
 import {motion} from "framer-motion"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Keyboard, Scrollbar } from 'swiper/modules'
 import 'swiper/css'
@@ -69,6 +71,12 @@ const Modal = ({data, close}) => {
                     {tools.map((tool)=> (
                         <Feature iconName={tool.icon} iconLabel={tool.name}/>
                     ))}
+                </motion.div>
+                <motion.div className="modal__row" variants={modalRowVariants}>
+                    <motion.button whileHover={{scale:1.1}} class="modal__button">
+                        <FontAwesomeIcon className="modal__button-icon" icon={faGithub} />
+                        <span className="modal__button-text">View on GitHub</span>
+                    </motion.button>
                 </motion.div>
                 <motion.div className="modal__description-wrapper" variants={modalRowVariants}>
                     <p className="modal__description">{description}</p>

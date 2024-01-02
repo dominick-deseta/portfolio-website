@@ -69,6 +69,43 @@
     height: 40px;
 }
 
+.modal__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    background: black;
+    border-radius: 25px; 
+    padding: 5px; /* Adjust for desired spacing */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 15px;
+    margin-top: -5px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+  }
+  
+.modal__button-icon {
+    width: 20px;
+    height: 20px;
+    color: white;
+    z-index: 1;
+}
+
+.modal__button-text {
+    font-family: 'Saira', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.modal__button:hover {  background: white; }
+.modal__button:hover .modal__button-text {  color: black;  }
+.modal__button:hover .modal__button-icon {  color: black;  }
+
 .swiper-button-next,
 .swiper-button-prev {
     width:10rem !important;
