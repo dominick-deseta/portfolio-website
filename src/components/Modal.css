@@ -14,7 +14,7 @@
 }
 
 .modal__row {
-    margin: 20px 0px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     text-align: left;
@@ -23,6 +23,7 @@
 .modal__title {
     font-size: 3rem;
     font-weight: 700;
+    line-height: 1;
 }
 
 .modal__type {
@@ -42,7 +43,7 @@
 }
 
 .modal__description-wrapper {
-    margin: 20px 0px;
+    margin-top: 10px;
     text-align: left;
     overflow-y: scroll;
     display: flex;

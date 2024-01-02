@@ -7,6 +7,12 @@ import SplitType from 'split-type';
 import { gsap } from "gsap";
 import { useEffect } from 'react';
 import * as FontAwesome from "react-icons/fa";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ReactDOM from 'react-dom'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFileLines, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
 function App() {
   const Icon = FontAwesome["FaBed"];
@@ -36,43 +42,68 @@ function App() {
       ease: "power2.out"
     });
 
-    document.getElementById('expandableButton').addEventListener('click', function() {
-      // Animation for expanding the button width and border-radius
-      gsap.to('.button', {
-        width: '150px', // Use 'auto' if you want to accommodate the length of the text
-        padding: '0 20px', // Add padding to the left and right of the text
-        duration: 0.5,
-      });
-      
-      // To reveal the text, change the opacity and translate properties
-      gsap.to('.button-text', {
-        opacity: 1,
-        x: 0,
-        duration: 0.5,
-      });
-    
+    gsap.to('.button', {
+      scale: 1,
+      duration: 1,
+      delay: 1.5,
+      ease: "power2.out",
+      stagger: 0.1
     });
 
-    // Cleanup function for component unmount
-    return () => {
-      splitFirst.revert();
-      splitLast.revert();
-    };
+    gsap.to('.button', {
+      width: '150px',
+      duration: 1,
+      delay: 3,
+      ease: "power2.out",
+      stagger: 0.5
+    });
+    
+    gsap.to('.button-text', {
+      x: 15,
+      opacity: 1,
+      duration: 1,
+      delay: 3,
+      ease: "power2.out",
+      stagger: 0.5
+    });
+
+    gsap.to('.button-icon', {
+      x: -45,
+      duration: 1,
+      delay: 3,
+      ease: "power2.out",
+      stagger: 0.5
+    });
 
   }, []);
 
   return (
+    
     <div className="App">
       <header>
         <div className="name-container">
           <h1 id="first-name">Dominick</h1>
           <h1 id="last-name">DeSeta</h1>
         </div>
+        <div className="button-container">
+          <motion.button whileHover={{scale:1.2}} class="button">
+            <FontAwesomeIcon className="button-icon" icon={faGithub} />
+            <span className="button-text">Github</span>
+          </motion.button>
+          <motion.button whileHover={{scale:1.2}} class="button">
+            <FontAwesomeIcon className="button-icon" icon={faLinkedin} />
+            <span className="button-text">LinkedIn</span>
+          </motion.button>
+          <motion.button whileHover={{scale:1.2}} class="button">
+            <FontAwesomeIcon className="button-icon" icon={faEnvelope} />
+            <span className="button-text">Email</span>
+          </motion.button>
+          <motion.button whileHover={{scale:1.2}} class="button">
+            <FontAwesomeIcon className="button-icon" icon={faFileLines} />
+            <span className="button-text">Resume</span>
+          </motion.button>
+        </div>
       </header>
-      <button id="expandableButton" class="button">
-        <Icon className="button-icon"/> 
-        <span class="button-text">Button Text</span>
-      </button>
       <div className='properties'>
         {properties.map((item)=> (
           <Card data={item} key={item.id} />

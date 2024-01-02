@@ -16,7 +16,7 @@ export const properties = [
         ],
         screenshots: ["test/phone1", "test/phone2", "test/phone3", "test/phone4"],
         githubUrl:"",
-        description:"AH Anonymous test description AH Anonymous test description AH Anonymous test description AH Anonymous test description"
+        description:"AH Anonymous test description AH Anonymous test description AH Anonymous test description AH Anonymous test description lorem ipsum dolor compiled successfully you can now view portfolio-website in the browser let me know if you need more help with this or if you have any other question! setting line height to a value less thn 1 will reduce the spacing between lines. you can experiment with different values to ahieve the desired spacing for your wrapped span element."
     },
     {
         id: 2,

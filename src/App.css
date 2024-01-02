@@ -22,37 +22,50 @@
   flex-wrap: wrap; /* Allows items to wrap onto the next line */
   justify-content: center; /* Center the names horizontally */
   align-items: center; /* Align the names vertically */
+  padding-bottom: 15px;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
 .button {
+  scale: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px; /* Adjust as needed */
-  padding: 0 20px; /* Padding for the initial circle shape */
   overflow: hidden;
-  border: 2px solid #ccc;
-  transition: all 0.5s ease-in-out; /* Transition for smooth expansion */
+  /* border: 2px solid #ccc; */
   cursor: pointer;
-  background: white;
-  /* Initial border-radius is half the height to make it a perfect semicircle */
+  background: black;
   border-radius: 25px; /* This should always be half of the height */
+  position: relative;
 }
 
+.button-icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+  z-index: 1;
+}
 
 .button-text {
+  font-size: 1.2rem;
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600;
+  position: absolute;
+  transform: translateX(60px);
   white-space: nowrap;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: transform 0.5s, opacity 0.5s;
 }
 
 
-/* Hover state for button if needed */
-.button:hover {
-  background: #e1e1e1; /* Example hover color */
-}
+.button:hover {  background: white; }
+.button:hover .button-text {  color: black;  }
+.button:hover .button-icon {  color: black;  }
 
 ::-webkit-scrollbar {
   width: 5px;
