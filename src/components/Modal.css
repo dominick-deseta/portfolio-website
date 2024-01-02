@@ -68,8 +68,8 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    width:7vh !important;
-    height:7vh !important;
+    width:20vh !important;
+    height:20vh !important;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
