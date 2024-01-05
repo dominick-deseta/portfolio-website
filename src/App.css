@@ -17,6 +17,13 @@
   transform: translateY(100%); 
 }
 
+.line {
+  white-space: nowrap;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
 .name-container {
   display: flex; /* Enables Flexbox */
   flex-wrap: wrap; /* Allows items to wrap onto the next line */
@@ -69,6 +76,43 @@
 .button:hover .button-text {  color: black;  }
 .button:hover .button-icon {  color: black;  }
 
+.bio-container { 
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  gap: 10vh;
+  margin-bottom: 20vh;
+}
+
+.bio {
+  width: 50%;
+}
+
+.headshot {
+  border-radius: 50%;
+  width: 40vh;
+  height: 40vh;
+}
+
+.projects__header {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center; /* Changed from justify-items to align-items */
+}
+
+.projects__underline {
+  width: 20%;
+  height: 4px;
+  background-color: #338CFF;
+  transform: scaleX(0);
+  align-self: center;
+  position: relative;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   background-color: transparent;
@@ -77,6 +121,17 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: #cacaca;
+}
+
+@media (max-width: 1000px) {
+  .bio-container{
+    flex-direction: column;
+    gap: 5px;
+  } 
+
+  .bio{
+    width: 80%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -88,5 +143,10 @@
 
   .button-container button:nth-child(odd) {
     justify-self: end;
+  }
+
+  .headshot {
+    width: 30vh;
+    height: 30vh;
   }
 }

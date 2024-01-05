@@ -11,7 +11,8 @@ body {
 header {
   display: grid;
   place-content: center;
-  height: 50vh;
+  margin-top: 35vh;
+  margin-bottom: 20vh;
 }
 
 h1 {
@@ -22,6 +23,19 @@ h1 {
   overflow: hidden; 
   margin: 0 15px; /* Adds spacing between names, adjust as needed */
   white-space: nowrap;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 3.5rem;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600;
+  color: #338CFF;
+  margin: 0px;
 }
 
 @media (max-width: 768px) { /* Adjust the max-width as needed for your breakpoint */

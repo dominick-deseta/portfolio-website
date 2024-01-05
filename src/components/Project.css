@@ -9,6 +9,7 @@
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    opacity: 0;
 }
 
 .project::before {

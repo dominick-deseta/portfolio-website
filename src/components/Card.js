@@ -1,10 +1,13 @@
-import React, {useState} from "react"
+import React, {Fragment, useState} from "react"
 import Project from "./Project"
 import Overlay from "./Overlay";
 import Modal from "./Modal";
 import { AnimatePresence } from "framer-motion";
+import {useRef, useEffect} from 'react'
+import { gsap } from "gsap"
+import "./Card.css"
 
-const Card = ({ data }) => {
+const Card = ({ data, index }) => {
     const [open, setOpen] = useState(false);
     const openModal = () => {
         setOpen(true);
@@ -14,7 +17,7 @@ const Card = ({ data }) => {
     }
     return (
         <>
-            <Project data={data} open={openModal}/>
+            <Project index={index} data={data} open={openModal}/>
             <AnimatePresence>
                 {open && (
                 <Overlay close={closeModal}> {

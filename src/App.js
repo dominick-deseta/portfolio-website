@@ -13,25 +13,27 @@ import ReactDOM from 'react-dom'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFileLines, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
 
 function App() {
   const Icon = FontAwesome["FaBed"];
 
   useEffect(() => {
-    gsap.registerPlugin(SplitType);
+    gsap.registerPlugin(SplitType, ScrollTrigger);
 
-    const firstName = document.getElementById('first-name');
-    const lastName = document.getElementById('last-name');
-
-    const splitFirst = new SplitType(firstName, {type: "chars"});
-    const splitLast = new SplitType(lastName, {type: "chars"});
+    const splitFirst = new SplitType('#first-name', {types: "chars"});
+    const splitLast = new SplitType('#last-name', {types: "chars"});
+    const splitBio = new SplitType('#bio', {types: "lines, words" });
+    const splitProjects = new SplitType('#projects__title', {types: "chars"})
 
     gsap.to(splitFirst.chars, {
       delay: 0.3,
       duration: 0.5,
       translateY: 0,
       stagger: 0.05,
-      ease: "power2.out"
+      ease: "power2.out",
+      onComplete: () => { splitFirst.revert() }
     });
 
     gsap.to(splitLast.chars, {
@@ -39,7 +41,8 @@ function App() {
       translateY: 0,
       stagger: 0.05,
       delay: 0.8, 
-      ease: "power2.out"
+      ease: "power2.out",
+      onComplete: () => { splitLast.revert() }
     });
 
     gsap.to('.button', {
@@ -75,8 +78,75 @@ function App() {
       stagger: 0.5
     });
 
-  }, []);
+    gsap.fromTo('.headshot',
+      { x: "-10vh", opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".bio-container",
+          start: "top 60%", 
+        }
+      }
+    );
 
+    const numRows = splitBio.lines.length;
+    for (let i = 0; i < numRows; i++) {
+      const words = splitBio.lines[i].children;
+      for (let j = 0; j < words.length; j++) {
+        gsap.fromTo(words[j],
+          { x: "10vh", opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            delay: j * 0.1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".bio-container",
+              start: "top 60%", 
+            },
+            onComplete: () => { 
+              if (i == numRows - 1 && j == words.length - 1) {
+                setTimeout(() => {
+                  splitBio.revert();
+                }, 1000); 
+              }
+            }
+          }
+        );
+      };
+    };
+
+    gsap.to(".projects__underline", 
+      { 
+        scaleX: 1, 
+        duration: 1, 
+        ease: "power1.out",
+        transformOrigin: "left",
+        scrollTrigger: {
+          trigger: ".projects__header",
+          start: "top 80%", 
+        },
+      }
+    );
+
+    gsap.to(splitProjects.chars, {
+      duration: 0.5,
+      translateY: 0,
+      stagger: 0.05,
+      ease: "power2.out",
+      onComplete: () => { splitProjects.revert() },
+      scrollTrigger: {
+        trigger: ".projects__header",
+        start: "top 80%", 
+      },
+    });
+
+  }, []);
+  
   return (
     
     <div className="App">
@@ -104,9 +174,19 @@ function App() {
           </motion.button>
         </div>
       </header>
+      <div className="bio-container">
+        <motion.img className="headshot" src={`https://res.cloudinary.com/dv5ot0eg0/image/upload/v1703022042/headshot.jpg`} alt={`Headshot`}/>
+        <h2 className="bio" id="bio">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum ipsum arcu, dignissim posuere turpis tincidunt vel. Donec suscipit lorem at tempor sagittis. Vestibulum semper ex arcu, eget sodales sem condimentum a. Nunc nec facilisis augue. Duis consectetur at nulla vitae volutpat. Proin sit amet eleifend neque, vel dapibus turpis. Nulla in euismod nulla. Cras et sapien non nunc dapibus pharetra nec et mauris. Phasellus bibendum tincidunt libero, in efficitur ante auctor non. In ornare ante mollis metus egestas, vel tincidunt ante tempor.
+        </h2>
+      </div>
+      <div className="projects__header">
+        <h3 id="projects__title">PROJECTS</h3>
+        <div className="projects__underline"/>
+      </div>
       <div className='properties'>
-        {properties.map((item)=> (
-          <Card data={item} key={item.id} />
+        {properties.map((item,index)=> (
+          <Card data={item} key={item.id} index={index} className="project__card"/>
         ))}
       </div>
     </div>
