@@ -23,11 +23,13 @@ h1 {
   overflow: hidden; 
   margin: 0 15px; /* Adds spacing between names, adjust as needed */
   white-space: nowrap;
+  opacity: 0;
 }
 
 h2 {
   font-size: 1.5rem;
   font-weight: 400;
+  opacity: 0;
 }
 
 h3 {

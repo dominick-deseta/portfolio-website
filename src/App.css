@@ -91,6 +91,7 @@
 }
 
 .headshot {
+  opacity: 0;
   border-radius: 50%;
   width: 40vh;
   height: 40vh;

@@ -27,6 +27,9 @@ function App() {
     const splitBio = new SplitType('#bio', {types: "lines, words" });
     const splitProjects = new SplitType('#projects__title', {types: "chars"})
 
+    gsap.set('#first-name', {opacity: 1})
+    gsap.set('#last-name', {opacity: 1})
+
     gsap.to(splitFirst.chars, {
       delay: 0.3,
       duration: 0.5,
@@ -92,6 +95,7 @@ function App() {
       }
     );
 
+    gsap.set('#bio',{opacity:1})
     const numRows = splitBio.lines.length;
     for (let i = 0; i < numRows; i++) {
       const words = splitBio.lines[i].children;
@@ -124,6 +128,7 @@ function App() {
       { 
         scaleX: 1, 
         duration: 1, 
+        delay: 0.2,
         ease: "power1.out",
         transformOrigin: "left",
         scrollTrigger: {
@@ -137,24 +142,13 @@ function App() {
       duration: 0.5,
       translateY: 0,
       stagger: 0.05,
+      delay: 0.2,
       ease: "power2.out",
       onComplete: () => { splitProjects.revert() },
       scrollTrigger: {
         trigger: ".projects__header",
         start: "top 80%", 
       },
-    });
-
-    gsap.fromTo("#this-website-project", 
-        { opacity: 0, y: "8vh" }, 
-        { opacity: 1, 
-            y: 0, 
-            duration: 1,
-            delay: 2.5,
-            scrollTrigger: {
-                trigger: ".projects__header",
-                start: "top 80%", 
-            },
     });
 
   }, []);

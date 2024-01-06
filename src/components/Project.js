@@ -22,7 +22,7 @@ const Project = ({ data, open, index }) => {
             { opacity: 1, 
                 y: 0, 
                 duration: 1,
-                delay: 1+0.2*index,
+                delay: 0.5+0.2*index,
                 scrollTrigger: {
                     trigger: ".projects__header",
                     start: "top 80%", 
