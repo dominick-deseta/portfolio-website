@@ -12,10 +12,20 @@
     opacity: 0;
 }
 
+.project.no-thumbnail {
+    cursor: auto;
+}
+
 .project::before {
     content: "";
     display: block;
-    padding-bottom: calc((5/4) * 100%);
+    padding-bottom: var(--project-padding-bottom, calc((5/4) * 100%));
+}
+
+.project:last-child::before {
+    content: "";
+    display: block;
+    padding-bottom: var(--project-padding-bottom, calc((3/8) * 100%));
 }
 
 .project__content {
@@ -51,6 +61,10 @@
     position: relative;
 }
 
+.project__details.no-thumbnail {
+    height: 100%;
+}
+
 .project__row {
     display: flex;
     margin: 0px 0px;
@@ -72,3 +86,40 @@
     font-family: 'Saira', sans-serif;
     font-weight: 400;
 }
+
+.project__git-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    background: black;
+    border-radius: 25px; 
+    padding: 5px; /* Adjust for desired spacing */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 15px;
+    margin-top: -5px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+  }
+  
+.project__git-button-icon {
+    width: 20px;
+    height: 20px;
+    color: white;
+    z-index: 1;
+}
+
+.project__git-button-text {
+    font-family: 'Saira', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.project__git-button:hover {  background: white; }
+.project__git-button:hover .project__git-button-text {  color: black;  }
+.project__git-button:hover .project__git-button-icon {  color: black;  }

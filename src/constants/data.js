@@ -1,7 +1,7 @@
 export const properties = [
     {
         id: 1,
-        thumbnail: "headshot",
+        thumbnail: "samples/man-on-a-escalator",
         title: "AHAnonymous",
         type: "Android Application",
         tools: [
@@ -112,5 +112,15 @@ export const properties = [
         screenshots: ["test/1", "test/2", "test/3", "test/4"],
         githubUrl:"",
         description:"Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description Form Processor test description "
+    },
+    {
+        id: 7,
+        thumbnail: "",
+        title: "Online Portfolio",
+        type: "The website you're on now!",
+        tools: [],
+        screenshots: [],
+        githubUrl:"",
+        description:""
     }
   ];

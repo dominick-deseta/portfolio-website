@@ -145,6 +145,18 @@ function App() {
       },
     });
 
+    gsap.fromTo("#this-website-project", 
+        { opacity: 0, y: "8vh" }, 
+        { opacity: 1, 
+            y: 0, 
+            duration: 1,
+            delay: 2.5,
+            scrollTrigger: {
+                trigger: ".projects__header",
+                start: "top 80%", 
+            },
+    });
+
   }, []);
   
   return (
@@ -186,7 +198,7 @@ function App() {
       </div>
       <div className='properties'>
         {properties.map((item,index)=> (
-          <Card data={item} key={item.id} index={index} className="project__card"/>
+          <Card data={item} key={item.id} index={index}/>
         ))}
       </div>
     </div>
