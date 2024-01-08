@@ -73,10 +73,12 @@ const Modal = ({data, close}) => {
                     ))}
                 </motion.div>
                 <motion.div className="modal__row" variants={modalRowVariants}>
-                    <motion.button whileHover={{scale:1.1}} class="modal__button">
-                        <FontAwesomeIcon className="modal__button-icon" icon={faGithub} />
-                        <span className="modal__button-text">View on GitHub</span>
-                    </motion.button>
+                    <a href={githubUrl} target="_blank">
+                        <motion.button whileHover={{scale:1.1}} class="modal__button">
+                            <FontAwesomeIcon className="modal__button-icon" icon={faGithub} />
+                            <span className="modal__button-text">View on GitHub</span>
+                        </motion.button>
+                    </a>
                 </motion.div>
                 <motion.div className="modal__description-wrapper" variants={modalRowVariants}>
                     <p className="modal__description">{description}</p>

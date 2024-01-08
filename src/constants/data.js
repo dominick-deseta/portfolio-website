@@ -95,7 +95,7 @@ export const properties = [
             }
         ],
         screenshots: ["test/1", "test/2", "test/3", "test/4"],
-        githubUrl:"",
+        githubUrl:"https://github.com/dominick-deseta/fractal-renderer",
         description:"Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description Fractal Renderer test description "
     },
     {
@@ -120,7 +120,7 @@ export const properties = [
         type: "The website you're on now!",
         tools: [],
         screenshots: [],
-        githubUrl:"",
+        githubUrl:"https://github.com/dominick-deseta/portfolio-website",
         description:""
     }
   ];

@@ -1,0 +1,153 @@
+.App {
+    text-align: center;
+    font-family: 'Saira', sans-serif;
+    font-weight: 400;
+    padding: 25px;
+  }
+  
+  .properties {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .char {
+    display: inline-block; 
+    transform: translateY(100%); 
+  }
+  
+  .line {
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .name-container {
+    display: flex; /* Enables Flexbox */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: center; /* Center the names horizontally */
+    align-items: center; /* Align the names vertically */
+    padding-bottom: 15px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .button {
+    scale: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px; /* Adjust as needed */
+    overflow: hidden;
+    /* border: 2px solid #ccc; */
+    cursor: pointer;
+    background: black;
+    border-radius: 25px; /* This should always be half of the height */
+    position: relative;
+  }
+  
+  .button-icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    z-index: 1;
+  }
+  
+  .button-text {
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    transform: translateX(60px);
+    white-space: nowrap;
+  }
+  
+  
+  .button:hover {  background: white; }
+  .button:hover .button-text {  color: black;  }
+  .button:hover .button-icon {  color: black;  }
+  
+  .bio-container { 
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    gap: 10vh;
+    margin-bottom: 20vh;
+  }
+  
+  .bio {
+    width: 50%;
+  }
+  
+  .headshot {
+    opacity: 0;
+    border-radius: 50%;
+    width: 40vh;
+    height: 40vh;
+  }
+  
+  .projects__header {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center; /* Changed from justify-items to align-items */
+  }
+  
+  .projects__underline {
+    width: 20%;
+    height: 4px;
+    background-color: #338CFF;
+    transform: scaleX(0);
+    align-self: center;
+    position: relative;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #cacaca;
+  }
+  
+  @media (max-width: 1000px) {
+    .bio-container{
+      flex-direction: column;
+      gap: 5px;
+    } 
+  
+    .bio{
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 12px; 
+    }
+  
+    .button-container button:nth-child(odd) {
+      justify-self: end;
+    }
+  
+    .headshot {
+      width: 30vh;
+      height: 30vh;
+    }
+  }

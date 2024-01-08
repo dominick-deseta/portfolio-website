@@ -61,10 +61,12 @@ const Project = ({ data, open, index }) => {
                                 <Feature iconName={tool.icon} iconLabel={tool.name}/>
                             ))
                         :
-                            <motion.button whileHover={{scale:1.1}} class="project__git-button">
-                                <FontAwesomeIcon className="project__git-button-icon" icon={faGithub} />
-                                <span className="project__git-button-text">View on GitHub</span>
-                            </motion.button>
+                            <a href={githubUrl} target="_blank">
+                                <motion.button whileHover={{scale:1.1}} class="project__git-button">
+                                    <FontAwesomeIcon className="project__git-button-icon" icon={faGithub} />
+                                    <span className="project__git-button-text">View on GitHub</span>
+                                </motion.button>
+                            </a>
                         }
                     </div>
                 </div>

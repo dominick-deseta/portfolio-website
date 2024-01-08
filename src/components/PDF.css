@@ -1,0 +1,83 @@
+.button-box {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.PDF-frame {
+    width: 100%;
+    height: 100%;
+}
+
+.PDF__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    background: #338CFF;
+    border-color: #338CFF;
+    border-radius: 25px; 
+    border-width: 4px;
+    padding: 5px; /* Adjust for desired spacing */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 15px;
+    margin-top: -5px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+  }
+  
+.PDF__button-icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    z-index: 1;
+}
+
+.PDF__button-text {
+    font-family: 'Saira', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.back__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    background: white;
+    border-color: #338CFF;
+    border-width: 4px;
+    border-radius: 25px; 
+    padding: 5px; /* Adjust for desired spacing */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 15px;
+    margin-top: -5px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+  }
+  
+.back__button-icon {
+    width: 30px;
+    height: 30px;
+    color: #338CFF;
+    z-index: 1;
+}
+
+.back__button-text {
+    font-family: 'Saira', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #338CFF;
+    white-space: nowrap;
+    margin-left: 10px;
+}
