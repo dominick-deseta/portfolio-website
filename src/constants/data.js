@@ -34,7 +34,7 @@ export const properties = [
             }
         ],
         screenshots: ["test/1", "test/2", "test/3", "test/4"],
-        githubUrl:"",
+        githubUrl:"https://github.com/HackIllinois/android",
         description:"HackIllinois test description HackIllinois test description HackIllinois test description HackIllinois test description HackIllinois test description "
     },
     {
