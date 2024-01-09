@@ -69,7 +69,7 @@ const Modal = ({data, close}) => {
                 </motion.div>
                 <motion.div className="modal__row" variants={modalRowVariants}>
                     {tools.map((tool)=> (
-                        <Feature iconName={tool.icon} iconLabel={tool.name}/>
+                        <Feature featName={tool}/>
                     ))}
                 </motion.div>
                 <motion.div className="modal__row" variants={modalRowVariants}>

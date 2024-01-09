@@ -58,7 +58,8 @@ const Project = ({ data, open, index }) => {
                     <div className="project__row">
                         {thumbnail ? 
                             tools.map((tool)=> (
-                                <Feature iconName={tool.icon} iconLabel={tool.name}/>
+                                console.log(tool),
+                                <Feature featName={tool}/>
                             ))
                         :
                             <a href={githubUrl} target="_blank">
