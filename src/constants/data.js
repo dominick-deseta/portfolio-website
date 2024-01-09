@@ -21,12 +21,12 @@ export const properties = [
     },
     {
         id: 3,
-        thumbnail: "samples/shoe",
-        title: "Calendar Widget",
+        thumbnail: "calendar/calendar1",
+        title: "Google Calendar Widget",
         type: "Android Widget",
         tools: ["Android Studio", "Google Calendar API"],
-        screenshots: ["test/1", "test/2", "test/3", "test/4"],
-        githubUrl:"",
+        screenshots: ["calendar/calendar1", "calendar/calendar2"],
+        githubUrl:"https://github.com/dominick-deseta/calendar-widget",
         description:"Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description Calendar Widget test description "
     },
     {
