@@ -2,7 +2,7 @@ import React from "react"
 import { FaDraftingCompass, FaJava, FaCode, FaNodeJs, FaReact, FaGoogle} from "react-icons/fa";
 import { IoLogoFirebase } from "react-icons/io5";
 import { GrMysql } from "react-icons/gr"
-import { SiGooglecloud } from "react-icons/si"
+import { SiGooglecloud, SiKotlin } from "react-icons/si"
 import "./Feature.css";
 
 
@@ -17,6 +17,7 @@ const Feature = ({featName}) => {
         case "Google Calendar API": Icon = FaGoogle; break;
         case "MySQL": Icon = GrMysql; break;
         case "GCP": Icon = SiGooglecloud; break;
+        case "Kotlin": Icon = SiKotlin; break;
         default: Icon = FaCode;
 
     }

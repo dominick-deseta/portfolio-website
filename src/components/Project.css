@@ -14,6 +14,9 @@
 
 .project.no-thumbnail {
     cursor: auto;
+    max-height: 150px;
+    margin-left: 50vh;
+    margin-right: 50vh;
 }
 
 .project::before {
@@ -79,6 +82,7 @@
     font-size: 1.5rem;
     font-family: 'Saira', sans-serif;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .project__type {
@@ -123,3 +127,9 @@
 .project__git-button:hover {  background: white; }
 .project__git-button:hover .project__git-button-text {  color: black;  }
 .project__git-button:hover .project__git-button-icon {  color: black;  }
+
+@media (max-width: 1200px) {
+    .project__details {
+        padding: 0px 15px;
+    }
+}

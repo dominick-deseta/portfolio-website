@@ -64,7 +64,7 @@ function Main() {
       duration: 1,
       delay: 3,
       ease: "power2.out",
-      stagger: 0.5
+      stagger: 0.25
     });
     
     gsap.to('.button-text', {
@@ -73,7 +73,7 @@ function Main() {
       duration: 1,
       delay: 3,
       ease: "power2.out",
-      stagger: 0.5
+      stagger: 0.25
     });
 
     gsap.to('.button-icon', {
@@ -81,7 +81,7 @@ function Main() {
       duration: 1,
       delay: 3,
       ease: "power2.out",
-      stagger: 0.5
+      stagger: 0.25
     });
 
     gsap.fromTo('.headshot',
@@ -194,7 +194,8 @@ function Main() {
       <div className="bio-container">
         <motion.img className="headshot" src={`https://res.cloudinary.com/dv5ot0eg0/image/upload/v1703022042/headshot.jpg`} alt={`Headshot`}/>
         <h2 className="bio" id="bio">
-          As a Bachelor of Science candidate in Computer Science at the University of Illinois at Urbana-Champaign, I am gearing up for a full-time development role post-graduation in May 2024. My expertise primarily spans web and Android app development, underpinned by proficiency in languages like Java, JavaScript, and Python. I have developed skills in frontend development with React, Android app development using Kotlin and Java, and backend techniques involving Node.js and MySQL. My interests also extend to cybersecurity, game development, 3D modelling, and event processing​​.        </h2>
+          As a Bachelor of Science candidate in Computer Science at the University of Illinois at Urbana-Champaign, I am gearing up for a full-time development role post-graduation in May 2024. My expertise primarily spans web and Android app development, underpinned by proficiency in languages like Java, JavaScript, and Python. I have developed skills in frontend development with React, Android app development using Kotlin and Java, and backend techniques involving Node.js and MySQL. My interests also extend to cybersecurity, game development, 3D modeling, and event processing​​.        
+        </h2>
       </div>
       <div className="projects__header">
         <h3 id="projects__title">PROJECTS</h3>
